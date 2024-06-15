@@ -1,0 +1,23 @@
+cd C:\Proyectos\Sa>> dotnet new sln -n SalonBelleza
+>> dotnet new classlib -n SalonBelleza.Domain
+>> dotnet new classlib -n SalonBelleza.Infrastructure
+>> dotnet new classlib -n SalonBelleza.Application
+>> dotnet new mvc -n SalonBelleza.Web
+>> dotnet new webapi -n SalonBelleza.Api
+>> dotnet new classlib -n SalonBelleza.IOC
+>> dotnet sln SalonBelleza.sln add SalonBelleza.Domain/SalonBelleza.Domain.csproj
+>> dotnet sln SalonBelleza.sln add SalonBelleza.Infrastructure/SalonBelleza.Infrastructure.csproj
+>> dotnet sln SalonBelleza.sln add SalonBelleza.Application/SalonBelleza.Application.csproj   
+>> dotnet sln SalonBelleza.sln add SalonBelleza.Web/SalonBelleza.Web.csproj
+>> dotnet sln SalonBelleza.sln add SalonBelleza.Api/SalonBelleza.Api.csproj
+>> dotnet sln SalonBelleza.sln add SalonBelleza.IOC/SalonBelleza.IOC.csproj
+>> dotnet add SalonBelleza.Infrastructure/SalonBelleza.Infrastructure.csproj reference SalonBelleza.Domain/SalonBelleza.Domain.csproj        
+>> dotnet add SalonBelleza.Application/SalonBelleza.Application.csproj reference SalonBelleza.Domain/SalonBelleza.Domain.csproj
+>> dotnet add SalonBelleza.Web/SalonBelleza.Web.csproj reference SalonBelleza.Application/SalonBelleza.Application.csproj
+>> dotnet add SalonBelleza.Web/SalonBelleza.Web.csproj reference SalonBelleza.Infrastructure/SalonBelleza.Infrastructure.csproj
+>> dotnet add SalonBelleza.Api/SalonBelleza.Api.csproj reference SalonBelleza.Application/SalonBelleza.Application.csproj
+>> dotnet add SalonBelleza.Api/SalonBelleza.Api.csproj reference SalonBelleza.Infrastructure/SalonBelleza.Infrastructure.csproj
+>> dotnet add SalonBelleza.IOC/SalonBelleza.IOC.csproj reference SalonBelleza.Application/SalonBelleza.Application.csproj
+>> dotnet add SalonBelleza.IOC/SalonBelleza.IOC.csproj reference SalonBelleza.Infrastructure/SalonBelleza.Infrastructure.csproj
+>> dotnet add SalonBelleza.IOC/SalonBelleza.IOC.csproj reference SalonBelleza.Domain/SalonBelleza.Domain.csproj
+dotnet new classlib -n SalonBelleza.IOC --force
